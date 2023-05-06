@@ -7,7 +7,7 @@ const userExists = async (req, res, next) => {
     if (users.length == 0) {
       next();
     } else {
-      res.status(500).send({ error: "User already exists kindly login" });
+      res.send({ error: "User already exists kindly login" });
     }
   } catch (err) {
     res.status(500).send(err);
