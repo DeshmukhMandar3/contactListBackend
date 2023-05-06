@@ -5,7 +5,6 @@ const authorization = async (req, res, next) => {
   try {
     var decoded = jwt.verify(token, "masai");
     req.body.createdBy = decoded.id;
-    console.log(decoded);
     next();
   } catch (err) {
     res.status(500).send({ error: "Invalid Token" });
